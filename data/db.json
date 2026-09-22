@@ -1,0 +1,44 @@
+{
+  "treks": [
+    {
+      "id": "harishchandragad",
+      "name": "Harishchandragad",
+      "price": 1399,
+      "totalSeats": 30,
+      "status": "active",
+      "route": "Pune → Harishchandragad",
+      "difficulty": "Medium",
+      "duration": "1 Day",
+      "subtitle": "सह्याद्रीतील एक अविस्मरणीय अनुभव",
+      "description": "हरिश्चंद्रगड ट्रेकचा रोमांचक अनुभव वारी सह्याद्रीचीसोबत घ्या.",
+      "image": "images/harishchandragad.jpeg"
+    },
+    {
+      "id": "ratangad",
+      "name": "Ratangad",
+      "price": 1399,
+      "totalSeats": 30,
+      "status": "active",
+      "route": "Pune → Ratangad",
+      "difficulty": "Medium",
+      "duration": "1 Day",
+      "subtitle": "निसर्ग आणि साहसाची सुंदर भटकंती",
+      "description": "रतनगडचा सुंदर आणि रोमांचक ट्रेक.",
+      "image": "images/ratangad.jpeg"
+    },
+    {
+      "id": "rajgad",
+      "name": "Rajgad",
+      "price": 1399,
+      "totalSeats": 30,
+      "status": "coming-soon",
+      "route": "Pune → Rajgad",
+      "difficulty": "Medium",
+      "duration": "1 Day",
+      "subtitle": "Coming Soon",
+      "description": "राजगड ट्रेक लवकरच उपलब्ध होईल.",
+      "image": "images/rajgad.jpeg"
+    }
+  ],
+  "bookings": []
+}
