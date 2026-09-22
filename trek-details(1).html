@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trek Details | Wari Sahyadrichi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="logo"><img src="images/logo.jpeg" alt="Wari Sahyadrichi logo"><span>वारी</span> सह्याद्रीची</div>
+    <nav id="mainNav">
+        <a href="index.html">Home</a><a href="treks.html">Treks</a><a href="index.html#about">About</a><a href="index.html#gallery">Gallery</a><a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    <a href="booking.html" class="nav-btn">Book Trek</a>
+</header>
+
+<main class="detail-page">
+    <section class="detail-hero" id="detailHero">
+        <div class="detail-overlay">
+            <p class="section-label">WARI SAHYADRICHI</p>
+            <h1 id="detailTitle">Trek Details</h1>
+            <p id="detailSubtitle">Explore the Sahyadri with us.</p>
+        </div>
+    </section>
+
+    <section class="detail-content">
+        <div class="detail-main">
+            <p class="section-label">ABOUT THE TREK</p>
+            <h2 id="detailHeading">Your next Sahyadri adventure</h2>
+            <p id="detailDescription"></p>
+
+            <div class="detail-stats">
+                <div><span>📍</span><strong id="detailRoute"></strong><small>Route</small></div>
+                <div><span>🥾</span><strong id="detailDifficulty"></strong><small>Difficulty</small></div>
+                <div><span>⏱️</span><strong id="detailDuration"></strong><small>Duration</small></div>
+                <div><span>💰</span><strong id="detailPrice"></strong><small>Price</small></div>
+            </div>
+
+            <div class="detail-columns">
+                <div><h3>What to Carry</h3><ul id="carryList"></ul></div>
+                <div><h3>Good to Know</h3><ul id="knowList"></ul></div>
+            </div>
+        </div>
+
+        <aside class="detail-cta">
+            <p>READY FOR THE TRAIL?</p>
+            <h3 id="sideTitle">Join the trek</h3>
+            <p>Reserve your place and our team will share the pickup point, schedule and payment details on WhatsApp.</p>
+            <a id="bookLink" href="booking.html" class="primary-btn">Book This Trek</a>
+            <a href="treks.html" class="detail-back">← Back to Treks</a>
+        </aside>
+    </section>
+</main>
+
+<footer><div class="logo">वारी सह्याद्रीची</div><p>© 2026 Wari Sahyadrichi. All Rights Reserved.</p></footer>
+
+<script>
+const trekData = {
+    harishchandragad: {
+        title: 'Harishchandragad', subtitle: 'Konkan Kada, ancient temples and unforgettable Sahyadri trails.', image: 'images/sahyadri-02.jpeg',
+        route: 'Pune → Harishchandragad', difficulty: 'Moderate', duration: '1 Day', price: '₹1299',
+        description: 'Experience the legendary Konkan Kada, ancient temples and scenic trails of Harishchandragad with Wari Sahyadrichi.',
+        carry: ['Trekking shoes with good grip', '2–3 litres of water', 'Rain jacket / windcheater', 'Personal medicines and ID'],
+        know: ['Exact pickup point is shared after booking', 'Schedule may change with weather or trail conditions', 'Follow trek leader instructions throughout the trek']
+    },
+    ratangad: {
+        title: 'Ratangad', subtitle: 'Historic fort, mountain views and a beautiful Sahyadri trail.', image: 'images/sahyadri-04.jpeg',
+        route: 'Pune → Ratangad', difficulty: 'Moderate', duration: '1 Day', price: '₹1299',
+        description: 'Explore Ratangad fort and enjoy wide views of the surrounding Sahyadri ranges on a memorable weekend adventure.',
+        carry: ['Trekking shoes with good grip', '2–3 litres of water', 'Light snacks / energy bars', 'Rain protection and personal medicines'],
+        know: ['Pickup details are confirmed with the booking', 'Keep valuables secure during the trek', 'Respect nature and avoid littering']
+    },
+    rajgad: {
+        title: 'Rajgad', subtitle: 'Walk through the history of Swarajya at the mighty Rajgad fort.', image: 'images/sahyadri-06.jpeg',
+        route: 'Pune → Rajgad', difficulty: 'Moderate', duration: 'Coming Soon', price: 'Coming Soon',
+        description: 'Discover the historic Rajgad fort, its massive fortifications and panoramic Sahyadri landscapes. Booking will open when the next batch is announced.',
+        carry: ['Trekking shoes with good grip', 'Water and personal medicines', 'Rain protection in monsoon', 'Valid ID'],
+        know: ['This trek is currently marked as coming soon', 'Follow our updates for the next date', 'Booking will open once the schedule is confirmed']
+    }
+};
+const key = new URLSearchParams(location.search).get('trek') || 'harishchandragad';
+const data = trekData[key] || trekData.harishchandragad;
+document.title = data.title + ' | Wari Sahyadrichi';
+document.getElementById('detailTitle').textContent = data.title;
+document.getElementById('detailHeading').textContent = data.title;
+document.getElementById('detailSubtitle').textContent = data.subtitle;
+document.getElementById('detailDescription').textContent = data.description;
+document.getElementById('detailRoute').textContent = data.route;
+document.getElementById('detailDifficulty').textContent = data.difficulty;
+document.getElementById('detailDuration').textContent = data.duration;
+document.getElementById('detailPrice').textContent = data.price;
+document.getElementById('sideTitle').textContent = data.title;
+document.getElementById('detailHero').style.backgroundImage = `linear-gradient(rgba(10,20,10,.45),rgba(10,20,10,.72)), url("${data.image}")`;
+document.getElementById('carryList').innerHTML = data.carry.map(x => `<li>${x}</li>`).join('');
+document.getElementById('knowList').innerHTML = data.know.map(x => `<li>${x}</li>`).join('');
+if (key === 'rajgad') { document.getElementById('bookLink').textContent = 'Enquire on WhatsApp'; }
+
+const toggle = document.querySelector('.menu-toggle'), nav = document.getElementById('mainNav');
+toggle?.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+</script>
+</body>
+</html>

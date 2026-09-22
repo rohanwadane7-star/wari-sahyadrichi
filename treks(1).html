@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treks | Wari Sahyadrichi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="images/logo.jpeg" alt="Wari Sahyadrichi logo">
+        <span>वारी</span> सह्याद्रीची
+    </div>
+
+    <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="treks.html">Treks</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <a href="booking.html" class="nav-btn">Book Trek</a>
+</header>
+
+
+<section class="treks-page">
+
+    <div class="section-heading">
+        <p>DISCOVER SAHYADRI</p>
+        <h1>Upcoming Treks</h1>
+    </div>
+
+    <div class="trek-container">
+
+        <div class="trek-card">
+            <div class="trek-image harishchandragad"></div>
+
+            <div class="trek-info">
+                <span>WEEKEND TREK</span>
+                <h3>Harishchandragad</h3>
+
+                <p>
+                    Experience the legendary Konkan Kada,
+                    ancient temples and beautiful Sahyadri trails.
+                </p>
+
+                <p><b>📍 Pune → Harishchandragad</b></p>
+
+                <div class="trek-bottom">
+                    <strong>₹1299</strong>
+                   <a href="trek-details.html?trek=harishchandragad">View Details →</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="trek-card">
+            <div class="trek-image ratangad"></div>
+
+            <div class="trek-info">
+                <span>WEEKEND TREK</span>
+                <h3>Ratangad</h3>
+
+                <p>
+                    Explore Ratangad fort and enjoy the
+                    spectacular views of the Sahyadri ranges.
+                </p>
+
+                <p><b>📍 Pune → Ratangad</b></p>
+
+                <div class="trek-bottom">
+                    <strong>₹1299</strong>
+                    <a href="trek-details.html?trek=ratangad">View Details →</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="trek-card">
+            <div class="trek-image rajgad"></div>
+
+            <div class="trek-info">
+                <span>ADVENTURE TREK</span>
+                <h3>Rajgad</h3>
+
+                <p>
+                    Walk through the history of Swarajya
+                    and explore the mighty Rajgad fort.
+                </p>
+
+                <p><b>📍 Pune → Rajgad</b></p>
+
+                <div class="trek-bottom">
+                    <strong>Coming Soon</strong>
+                    <a href="trek-details.html?trek=rajgad">View Details →</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="center-cta">
+        <a href="booking.html" class="primary-btn">Book Your Adventure</a>
+    </div>
+
+</section>
+
+
+<footer>
+    <div class="logo">वारी सह्याद्रीची</div>
+
+    <p>© 2026 Wari Sahyadrichi. All Rights Reserved.</p>
+</footer>
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.getElementById('mainNav');
+menuToggle?.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+});
+mainNav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    mainNav.classList.remove('open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+}));
+</script>
+</body>
+</html>
