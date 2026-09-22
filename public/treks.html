@@ -46,10 +46,19 @@
 </section>
 
 
-<footer>
-    <div class="logo">वारी सह्याद्रीची</div>
-
-    <p>© 2026 Wari Sahyadrichi. All Rights Reserved.</p>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-row"><img src="images/logo.jpeg" alt="वारी सह्याद्रीची logo"><div><div class="footer-title">वारी सह्याद्रीची</div><div class="footer-kicker">TREKKING & ADVENTURE</div></div></div>
+      <p>सह्याद्रीच्या डोंगररांगांमध्ये ट्रेकिंग, साहस आणि अविस्मरणीय अनुभवांची तुमची विश्वासू साथी.</p>
+      <div class="footer-contact-line">📍 Pune, Maharashtra</div>
+      <div class="footer-contact-line">🛡️ Trekking & Outdoor Adventure</div>
+    </div>
+    <div><h4>QUICK LINKS</h4><a href="index.html">Home</a><a href="treks.html">Treks</a><a href="index.html#about">About Us</a><a href="index.html#gallery">Gallery</a><a href="index.html#contact">Contact</a><a href="booking.html" class="footer-accent">🎒 Book a Trek</a></div>
+    <div><h4>LEGAL & POLICIES</h4><a href="#">Terms & Conditions</a><a href="#">Registration Process</a><a href="#">Payment Options</a><a href="#">Refund & Cancellation</a><a href="#">Privacy Policy</a></div>
+    <div><h4>SUPPORT & HELPDESK</h4><p class="footer-help">Batch availability, group bookings & trek enquiries साठी आमच्याशी संपर्क करा.</p><a href="mailto:warisahyadrichi@gmail.com">✉ warisahyadrichi@gmail.com</a><a href="tel:+919322312607">☎ +91 93223 12607</a><a class="footer-whatsapp" href="https://wa.me/919322312607" target="_blank" rel="noopener">WhatsApp वर Chat करा</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 वारी सह्याद्रीची. All Rights Reserved.</span><span><a href="#">Terms</a> · <a href="#">Privacy</a> · <a href="#">Refunds</a></span></div>
 </footer>
 
 <script>
@@ -83,7 +92,7 @@ async function loadTreks() {
                     <p><b>📍 ${esc(t.route || `Pune → ${t.name}`)}</b></p>
                     <div class="trek-bottom">
                         <strong>${Number(t.price)>0 ? '₹'+Number(t.price) : 'Coming Soon'}</strong>
-                        <a href="trek-details.html?trek=${encodeURIComponent(t.id)}">View Details →</a>
+                        <div class="trek-actions"><a class="trek-detail-btn" href="trek-details.html?trek=${encodeURIComponent(t.id)}">Details</a>${active?`<a class="trek-book-btn" href="booking.html?trek=${encodeURIComponent(t.name)}">Book</a>`:`<a class="trek-book-btn disabled" href="trek-details.html?trek=${encodeURIComponent(t.id)}">Enquire</a>`}</div>
                     </div>
                 </div>
             </div>`;
