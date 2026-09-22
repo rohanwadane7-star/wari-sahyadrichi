@@ -1,0 +1,9 @@
+{
+  "name": "wari-sahyadrichi",
+  "version": "1.0.0",
+  "description": "वारी सह्याद्रीची Trekking Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
